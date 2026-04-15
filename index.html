@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockViz | Blockchain Simulyatsiyasi</title>
+    <meta name="description" content="Interaktiv JavaScript Blockchain simulyatsiyasi - Block yaratish, Mining va Validatsiya.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-mesh"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand">
+            <span class="brand-icon">⛓</span>
+            <span class="brand-text">Block<span class="accent">Viz</span></span>
+        </div>
+        <div class="nav-stats">
+            <div class="stat-pill" id="blockCount">📦 Bloklar: 0</div>
+            <div class="stat-pill valid" id="chainStatus">✅ Zanjir yaroqli</div>
+            <div class="stat-pill">⚡ Qiyinlik: 2</div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero -->
+        <header class="hero-section">
+            <h1 class="hero-title">
+                Blockchain<br><span class="gradient-text">Vizualizatsiyasi</span>
+            </h1>
+            <p class="hero-sub">SHA-256 hashing, Proof-of-Work va real-vaqt validatsiyasi bilan.</p>
+            <button id="initBtn" class="btn-primary pulse">🚀 Blockchain'ni Ishga Tushirish</button>
+        </header>
+
+        <!-- Controls -->
+        <section class="controls-panel glass-panel" id="controls" style="display:none;">
+            <h2 class="panel-title">✏️ Yangi Blok Qo'shish</h2>
+            <div class="input-row">
+                <input type="text" id="dataInput" placeholder="Blok ma'lumotini kiriting (masalan: To'lov: 100 ETH)..." class="data-input">
+                <button id="addBlockBtn" class="btn-add">⛏ Mine & Qo'sh</button>
+            </div>
+
+            <div class="actions-row">
+                <button id="validateBtn" class="btn-action">✅ Zanjirni Tekshirish</button>
+                <button id="tamperBtn" class="btn-action btn-danger">💥 Ma'lumotni Buzish (Test)</button>
+                <button id="clearBtn" class="btn-action btn-secondary">🔄 Qayta Boshlash</button>
+            </div>
+        </section>
+
+        <!-- Mining status -->
+        <div id="miningStatus" class="mining-status" style="display:none;">
+            <div class="mining-spinner"></div>
+            <span id="miningText">Blok mining qilinmoqda...</span>
+        </div>
+
+        <!-- Blockchain Visualization -->
+        <section id="chainContainer" class="chain-container"></section>
+
+        <!-- Log Console -->
+        <section class="console-panel glass-panel" id="logSection" style="display:none;">
+            <h2 class="panel-title">🖥 Konsol Logi</h2>
+            <div id="logOutput" class="log-output"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>⛓ BlockViz — Blockchain Simulyatsiyasi | SHA-256 + Proof-of-Work</p>
+    </footer>
+
+    <script src="blockchain.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
